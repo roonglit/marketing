@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/mac/.claude -type f \\\\\\(-name *.md -o -name *.json -o -name *.yaml -o -name *.yml \\\\\\))",
+      "Bash(grep -r \"ms-office\\\\|ms_office\\\\|pptx\" /Users/mac/.claude/plugins --include=*.md)",
+      "Bash(xargs -I {} find {} -name SKILL.md)",
+      "Bash(xargs basename:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(cp /Users/mac/developments/marketing/_templates/deck_template.pptx /Users/mac/developments/marketing/.claude/skills/gotravel-pptx/assets/deck_template.pptx)",
+      "Bash(cp /Users/mac/developments/marketing/_templates/deck_template_analysis.md /Users/mac/developments/marketing/.claude/skills/gotravel-pptx/references/deck_template_analysis.md)",
+      "Bash(node -e \"require\\(''pptxgenjs''\\)\")",
+      "Bash(npm install:*)",
+      "Bash(node -e \"require\\(''react-icons/fa''\\); require\\(''react''\\); require\\(''react-dom/server''\\); require\\(''sharp''\\)\")",
+      "Bash(node -e \"require\\(''sharp''\\)\")",
+      "Bash(node:*)",
+      "Bash(python3 -m markitdown /Users/mac/developments/marketing/presentations/q3-summer-asia-campaign-strategy-2026-07.pptx)",
+      "Bash(pip3 install:*)",
+      "mcp__nanabanana__generate_image"
+    ]
+  }
+}
