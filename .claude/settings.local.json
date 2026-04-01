@@ -16,7 +16,9 @@
       "Bash(node:*)",
       "Bash(python3 -m markitdown /Users/mac/developments/marketing/presentations/q3-summer-asia-campaign-strategy-2026-07.pptx)",
       "Bash(pip3 install:*)",
-      "mcp__nanabanana__generate_image"
+      "mcp__nanabanana__generate_image",
+      "Bash(pip install:*)",
+      "Bash(python3:*)"
     ]
   }
 }

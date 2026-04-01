@@ -77,3 +77,41 @@ Examples:
 - `instagram-vietnam-trip-carousel-2026-03.md`
 
 Prefix drafts with `draft-`.
+
+## Agent Routing
+
+This workspace has two specialized sub-agents in `.claude/agents/`. Use them when the task is open-ended, spans multiple formats, or requires the agent to synthesize and make decisions across steps. **Do not** delegate single, specific actions that you can handle directly with a skill or tool.
+
+### `content-creator` (Sonnet)
+
+**Delegate when the user:**
+- Asks for content across **multiple formats** from one brief (e.g., "blog post + social posts + landing page for the Vietnam trip launch")
+- Provides a **campaign brief or marketing goal** and expects a full content suite
+- Wants content **adapted across channels** (e.g., "write a blog post and matching social posts to promote it")
+- Requests a **lead magnet, landing page, or blog post** as part of a broader content effort
+
+**Do NOT delegate when:**
+- The user asks for a **single blog post**, one social caption, or one email — handle it directly using the relevant SOP and template
+- The task is a **quick edit or revision** to existing content
+- The user asks you to **generate an image**, create a **PDF**, build a **presentation**, or produce a **spreadsheet** — use the appropriate skill (`/pdf`, `/pptx`, `/xlsx`, `nanobanana`) directly
+- The user wants a **single-format output** with a clear, specific brief — just write it
+
+### `data-analyst` (Sonnet)
+
+**Delegate when the user:**
+- Provides **raw campaign data** (CSV, pasted tables, screenshots) and asks for analysis
+- Requests a **weekly or monthly marketing performance report**
+- Wants to **investigate an anomaly** in ad spend, CPC, CTR, ROAS, or conversions
+- Asks to **compare channel or campaign performance** across time periods
+- Needs **trends identified** or **benchmarks established** from marketing data
+
+**Do NOT delegate when:**
+- The user asks a **single factual question** about a metric you can answer by reading a report file in `reports/`
+- The task is **creating** a report template or SOP — that's content work, not analysis
+- The user wants a **chart or visualization** without underlying data analysis — use a skill directly
+
+### General Routing Principles
+
+- **One skill, one action = handle directly.** If the request maps cleanly to a single skill (e.g., "create a PDF", "make a presentation", "generate an image"), use that skill without spinning up an agent.
+- **Open-ended or multi-step = delegate.** If the user gives a goal or brief that requires reading context, making judgment calls, and producing multiple outputs, use the appropriate agent.
+- **When in doubt, start direct.** You can always escalate to an agent if the task turns out to be more complex than expected. Don't over-delegate.
